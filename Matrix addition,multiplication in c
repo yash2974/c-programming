@@ -1,0 +1,65 @@
+#include<stdio.h>
+void main()
+{
+    int first[100][100],second[100][100],r,c,i,j,result[100][100],rf,cs,k,results[100][100];
+    printf("how many rows and columns you want\n");
+    scanf("%d%d",&r,&c);
+    printf("enter values in first matrix\n");
+        for ( i = 0; i < r; i++)
+        {
+            for ( j = 0; j < c; j++)
+            {
+                printf("enter element in %dX%d = ",i+1,j+1);
+                scanf("%d",&first[i][j]);                      
+            }
+            
+        }
+        printf("how many rows and columns you want\n");
+        scanf("%d%d",&rf,&cs);
+        printf("enter values in decond matrix\n");
+        for ( i = 0; i < rf; i++)
+        {
+            for ( j = 0; j < cs; j++)
+            {
+                printf("enter element in %dX%d = ",i+1,j+1);
+                scanf("%d",&second[i][j]);
+            }
+        }
+        printf("addition is as follows\n");
+    if (r==rf&&c==cs)
+    {
+        for ( i = 0; i < r; i++)
+        {
+            for ( j = 0; j < c; j++)
+            {
+                result[i][j]=first[i][j]+second[i][j];
+                printf("%d  ",result[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    else
+    printf("addition not possible\n");
+    if (c==rf)
+    {
+        printf("multiplication is as follows\n");
+        for ( i = 0; i < r; i++)
+        {
+            for ( j = 0; j < cs; j++)
+            {
+             for ( k = 0; k < c ; k++)
+             {
+                results[i][j]+=first[i][k]*second[k][j];
+             }
+             printf("%d  ",results[i][j]);
+             
+            } 
+            printf("\n");   
+        } 
+            
+        
+    }    
+
+    else
+    printf("multiplication not possible\n");
+}
